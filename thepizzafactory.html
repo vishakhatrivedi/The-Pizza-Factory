@@ -1,0 +1,442 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restraunt</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-container container">
+      <input type="checkbox" name="" id="">
+      <div class="hamburger-lines">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </div>
+      <ul class="menu-items">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#food">CATEGORY</a></li>
+        <li><a href="#food-menu">MENU</a></li>
+        <li><a href="#cart">CART</a></li>
+        <li><a href="#testimonials">TESTIMONIAL</a></li>
+        <li><a href="#contact">FEEDBACK</a></li>
+      </ul>
+      <img id="piz_logo" src="piz_logo.png">
+      <h1 class="logo">The Pizza Factory</h1>
+    </div>
+  </nav>
+  <section class="showcase-area" id="showcase">
+    <div class="showcase-container">
+      <h1 class="main-title" id="home">Hungry ?</h1>
+      <p>You've come to the right place!</p>
+      <a href="#food-menu" class="btn btn-primary">Menu</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about-wrapper container">
+      <div class="about-text">
+        <p class="small">About Us</p>
+        <h2>We've been making pizzas since the last 10 years</h2>
+        <p>
+          At The Pizza Factory, we're passionate about providing our customers with the best possible dining experience.
+          <p />
+          We're a beloved fixture in the community, known for our delicious, homemade pizzas. We source our ingredients
+          from local farmers and producers whenever possible, ensuring that everything on our menu is fresh and of the
+          highest quality.
+        </p>
+      </div>
+      <div class="about-img">
+        <img src="pizza1.jpg" alt="food" />
+      </div>
+    </div>
+  </section>
+  <section id="food">
+    <h2>CATEGORIES</h2>
+    <div class="food-container container">
+      <div class="food-type">
+        <div class="img-container">
+          <img src="pizza2.avif" alt="error" />
+          <div class="img-content">
+            <h3>PIZZA</h3>
+            <a href="#pizza" class="btn btn-primary" target="blank">see items</a>
+          </div>
+        </div>
+      </div>
+      <div class="food-type">
+        <div class="img-container">
+          <img src="garlicbread.jpg" alt="error" />
+          <div class="img-content">
+            <h3>GARLIC BREAD</h3>
+            <a href="#gbread" class="btn btn-primary" target="blank">see items</a>
+          </div>
+        </div>
+      </div>
+      <div class="food-type">
+        <div class="img-container">
+          <img src="pasta5.webp" alt="error" />
+          <div class="img-content">
+            <h3>PASTA</h3>
+            <a href="#pasta" class="btn btn-primary" target="blank">see items</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="food-menu">
+    <h2 class="food-menu-heading" id="pizza">PIZZAS</h2>
+    <div class="food-menu-container container">
+      <ul>
+        <li ng-repeat="item in menu">
+          <div class="food-menu-item">
+            <div class='food-img'><img ng-src={{item.image}}></div>
+            <div class="food-description">
+              <h2 class='food-title'>{{item.name}}<br></h2>
+              <p>{{item.desc}}</p>
+              <p class='food-price'>Price : &#8377;{{item.price}}<br></p>
+              <p><button class="btn btn-primary" ng-click="addToCart(item)">Add to cart</button></p>
+              <a href=#cart><button class="btn btn-primary" style="height:40px;width: 80px;"><img src="nobgd.png"
+                    style="height: 30px;width: 30px;;"></button></a>
+            </div>
+          </div>
+        </li>
+      </ul>
+  </section>
+  <section id="food-menu">
+    <h2 class="food-menu-heading" id="gbread">FRESH GARLIC BREAD</h2>
+    <div class="food-menu-container container">
+      <ul>
+        <li ng-repeat="item in gmenu">
+          <div class="food-menu-item">
+            <div class='food-img'><img ng-src={{item.image}}></div>
+            <div class="food-description">
+              <h2 class='food-title'>{{item.name}}<br></h2>
+              <p>{{item.desc}}</p>
+              <p class='food-price'>Price : &#8377;{{item.price}}<br></p>
+              <p><button class="btn btn-primary" ng-click="addToCart(item)">Add to cart</button></p>
+              <a href=#cart><button class="btn btn-primary" style="height:40px;width: 80px;"><img src="nobgd.png"
+                    style="height: 30px;width: 30px;;"></button></a>
+            </div>
+          </div>
+        </li>
+      </ul>
+  </section>
+  <section id="food-menu">
+    <h2 class="food-menu-heading" id="pasta">PASTAS</h2>
+    <div class="food-menu-container container">
+      <ul>
+        <li ng-repeat="item in pmenu">
+          <div class="food-menu-item">
+            <div class='food-img'><img ng-src={{item.image}}></div>
+            <div class="food-description">
+              <h2 class='food-title'>{{item.name}}<br></h2>
+              <p>{{item.desc}}</p>
+              <p class='food-price'>Price : &#8377;{{item.price}}<br></p>
+              <p><button class="btn btn-primary" ng-click="addToCart(item)">Add to cart</button></p>
+              <a href=#cart><button class="btn btn-primary" style="height:40px;width: 80px;"><img src="nobgd.png"
+                    style="height: 30px;width: 30px;;"></button></a>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+  <span id="cart"> </span>
+  <br><br>
+  <h2 class="food-menu-heading">Cart <img id="cart-logo" src="ca.png"></h2>
+
+  <table id="cart-bill">
+    <tr ng-repeat="item in cart">
+      <td class="cart-desc">{{item.name}} - &#8377;{{item.price}}</td>
+      <td><button class="btn btn-primary" ng-click="removeFromCart(item)">Remove</button></td>
+    </tr>
+    </div>
+  </table>
+  <div class="cart-p" ng-model="total">
+    <p class='food-price' ng-show="total">Total: &#8377;{{total}}</p>
+  </div>
+  <h3 class="cart-d" ng-hide="total">Your cart is empty!</h3>
+  <a href=#food-menu><button class="btn btn-primary" ng-hide="total" style="margin-left: 20px;margin-bottom: 20px;">Add
+      items to the cart</button></a>
+  <button class="btn btn-primary" ng-click="checkout()" ng-if="total">Checkout</button>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <section id="testimonials">
+    <h2 class="testimonial-title">What Our Customers Say about us</h2>
+    <div class="testimonial-container container">
+      <div class="testimonial-box">
+        <div class="customer-detail">
+          <div class="customer-photo">
+            <img src="k.jpeg" alt="" />
+            <p class="customer-name">Krisha</p>
+          </div>
+        </div>
+        <div class="star-rating">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+        <p class="testimonial-text">
+          I had the best pizza of my life at that time.
+        </p>
+
+      </div>
+      <div class="testimonial-box">
+        <div class="customer-detail">
+          <div class="customer-photo">
+            <img src="p.jpeg" alt="" />
+            <p class="customer-name">Prakarsh</p>
+          </div>
+        </div>
+        <div class="star-rating">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+        <p class="testimonial-text">
+          Such a great experience eating at this restaurant.
+        </p>
+
+      </div>
+      <div class="testimonial-box">
+        <div class="customer-detail">
+          <div class="customer-photo">
+            <img src="v.jpeg" alt="" />
+            <p class="customer-name">Vishakha</p>
+          </div>
+        </div>
+        <div class="star-rating">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+        <p class="testimonial-text">
+          The pizza here is real amazing.
+        </p>
+
+      </div>
+
+      <div class="testimonial-box">
+        <div class="customer-detail">
+          <div class="customer-photo">
+            <img src="j.jpeg" alt="" />
+            <p class="customer-name">Jas</p>
+          </div>
+        </div>
+        <div class="star-rating">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        </div>
+        <p class="testimonial-text">
+          Authentic Italian pizza. No other pizza compares to this one.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+  
+  <section id="contact">
+    <section>
+      <div class="contact-container container">
+        <div class="contact-img">
+          <img src="logo.png" alt="" />
+        </div>
+
+        <div class="form-container">
+          <h2>Leave a feedback</h2>
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+          <html ng-app="myApp" ng-controller="myCtrl">
+
+          <style>
+            form input {
+              border: none;
+              border-bottom: solid lightgray 2px;
+
+            }
+
+            form button {
+              background-color: rgb(19, 161, 133);
+              color: white;
+              padding: 10px 20px;
+              border: none;
+              border-radius: 3px;
+              font-size: 16px;
+              cursor: pointer;
+            }
+
+            #error {
+              color: rgb(19, 161, 133);
+            }
+          </style>
+
+
+          <form name="myForm" novalidate id="feedbackform">
+            <input type="text" name="username" placeholder="Your name" ng-model="username" minlength="3" maxlength="10"
+              ng-required="true" alphabets-only id="name">
+            <span id="error" ng-show="myForm.username.$touched && myForm.username.$error.required">Username is
+              required.</span>
+            <span id="error" ng-show="myForm.username.$error.minlength">Min 3 chars.</span>
+            <span id="error" ng-show="myForm.username.$error.maxlength">Max 10 chars.</span><br />
+
+
+            <input type="email" placeholder="Your Email ID " id="email" name="email" ng-model="email" required>
+            <span id="error" ng-show="myForm.email.$touched && myForm.email.$error.required">Email is required.</span>
+            <span id="error" ng-show="myForm.email.$touched && myForm.email.$error.email">Email is invalid.</span>
+
+
+            <textarea name="message" id="message" placeholder="Type your message here" ng-model="formData.message"
+              required></textarea>
+            <br />
+
+            <button type="submit" ng-disabled="myForm.$invalid" id="submit">Submit</button>
+          </form>
+
+
+          <script>
+            var app = angular.module('myApp', []);
+
+            app.controller('myCtrl', function ($scope) {
+              $scope.menu = [
+                { name: 'Classic Margherita Pizza', desc: 'A classic combination of marinara sauce, fresh mozzarella, cherry tomatoes on thin crust.', price: 435, image: "https://cdn.thrivenow.in/items/images/004/659/515/original/thumb_2022_11_25_15_35_49_MARGHERITA_THIN_CRUST.jpg?1679571771?&d=300x300" },
+                { name: 'Cilantro Paneer Pizza', desc: 'Pesto marinated paneer, roasted peppers, sumac onions, cilantro pesto marinara on thick crust.', price: 565, image: "https://cdn.thrivenow.in/items/images/004/659/474/original/thumb_2022_09_27_18_54_36_CILANTRO_PANEER_THICK_CRUST_1.jpg?1679571767?&d=500x375" },
+                { name: 'Chargrilled Vegetable Pizza', desc: 'Chargrilled garden vegetables, broccoli, slow roasted tomatoes, pickled jalape.', price: 565, image: "https://cdn.thrivenow.in/items/images/004/659/480/original/thumb_2022_09_27_18_51_09_CHARGRILLED_VEGETABLES_THIN_CRUST.jpg?1679571768?&d=300x300" },
+                { name: 'Four Seasons Pizza', desc: 'Grilled peppers, artichoke, zucchini, mushroom, mozzarella, marinara sauce on thick crust.', price: 585, image: "https://cdn.thrivenow.in/items/images/004/659/483/original/thumb_2022_09_27_18_47_40_FOUR_CHEESE_THICK_CRUST_3.jpg?1679571768?&d=500x375" },
+                { name: 'Caramelised Onions & Goats Cheese Pizza', desc: 'Caramelised onions, goat cheese, mozzarella, marinara sauce on thick crust.', price: 585, image: "https://cdn.thrivenow.in/items/images/004/659/486/original/thumb_2022_09_27_18_45_55_CARAMELISED_ONIONS_GOATS_CHEESE_THICK_CRUST.jpg?1679571769?&d=500x375" },
+                { name: 'Fajita Veg Pizza', desc: 'Mexican spiced sweet corn, bell peppers and onion with sour cream and guacamole.', price: 625, image: "https://cdn.thrivenow.in/items/images/004/659/495/original/thumb_2022_11_23_18_32_15_FAJITA_VEG_THIN_CRUST.jpg?1679571769?&d=500x375" },
+              ];
+
+              $scope.gmenu = [
+                { name: 'Plain Garlic Bread Sticks', desc: 'The endearing tang of garlic in breadstics baked to perfection.', price: 150, image: "garlic-breadsticks.jpg" },
+                { name: 'Cheesy Garlic Bread Sticks', desc: ' Garlic bread topped with 100% fresh and pure mozzarella cheese', price: 200, image: "cheesy-garlic-breadsticks.jpg" },
+                { name: 'Stuffed Garlic Bread', desc: 'Freshly Baked Garlic Bread stuffed with mozzarella cheese, sweet corns & tangy and spicy jalapeños', price: 250, image: "stuffed-garlic-breadstick.webp" },
+              ];
+
+              $scope.pmenu = [
+                { name: 'Penne Arrabbiata', desc: 'Penne pasta in our signature passata with garlic, red chillies, grilled red & yellow peppers, emilgrana & parsley.', price: 450, image: "pasta1.avif" },
+                { name: 'Spaghetti with Basil Pesto', desc: 'From Genova famed for its pesto, spaghetti, pasta with new potatoes, green beans, pesto and cream.', price: 450, image: "pasta2.avif" },
+                { name: 'Spaghetti Aglio e Olio', desc: 'Classic pasta recipe - Crispy garlic flakes, chilli flakes, parsley and olive oil', price: 350, image: "pasta3.avif" },
+                { name: 'Vegetable Lasagna', desc: 'Chargrilled vegetables, chopped capers and olives, emilgrana, béchamel and arrabiata with pasta.', price: 500, image: "pasta4.avif" }
+              ];
+
+              $scope.cart = [];
+
+              $scope.total = 0;
+
+              $scope.addToCart = function (item) {
+                $scope.cart.push(item);
+                $scope.total += item.price;
+              };
+
+              $scope.removeFromCart = function (item) {
+                var index = $scope.cart.indexOf(item);
+                $scope.cart.splice(index, 1);
+                $scope.total -= item.price;
+              };
+
+              $scope.checkout = function () {
+                if ($scope.total != 0)
+                  alert('Thank you for your order!');
+                else
+                  alert("Your cart is empty!")
+                $scope.cart = [];
+                $scope.total = 0;
+              };
+
+              $scope.valid = function () {
+                var x = 0;
+                for (var i = 0; i < $scope.course.length; i++) {
+                  if ($scope.course[i].Selected) {
+                    x++;
+                    break;
+                  }
+                }
+                if (x == 0) {
+                  $scope.validationmsg = true;
+                }
+                else
+                  $scope.validationmsg = false;
+              }
+            });
+
+            angular.module('myApp')
+              .directive('alphabetsOnly', function () {
+                return {
+                  require: 'ngModel',
+                  link: function (scope, element, attrs, modelCtrl) {
+                    modelCtrl.$parsers.push(function (inputValue) {
+                      if (inputValue == null) return ''
+                      cleanInputValue = inputValue.replace(/[^a-zA-Z]/g, '')
+                      if (cleanInputValue != inputValue) {
+                        modelCtrl.$setViewValue(cleanInputValue)
+                        modelCtrl.$render()
+                      }
+                      return cleanInputValue
+                    })
+                  }
+                }
+              })
+          </script>
+        </div>
+
+
+      </div>
+    </section>
+    <section id="contact1">
+      <section>
+        <h2 class="testimonial-title">Contact Us</h2>
+        <div class="contact-container container">
+          <div class="contact1-container">
+  
+            Email id: <a href="infopizzafactory@gmail.com">infopizzafactory@gmail.com</a>
+            <p />
+            Phone number: 022 2847 3276/79
+            <p />
+            Find us on
+            <p />
+            <div id="social-container">
+              <a href="https://www.instagram.com/"><img src="insta-removebg-preview.png" id="social1"> </a>
+              <a href="https://www.whatsapp.com/"><img src="whatsapp-removebg-preview.png" id="social2"> </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <footer id="footer">
+      <h2>Restaurant &copy; all rights reserved</h2>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="app.js"></script> -->
+    <script src="thepizzafactory.js"></script>
+
+</html>
+
+</body>
+
+</html>
